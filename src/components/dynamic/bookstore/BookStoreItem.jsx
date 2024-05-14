@@ -12,24 +12,35 @@ const BookStoreItem = ({store, topSellingBooks, authorsList, country}) => {
   });
 
   function renderBestSellingItem() {
-    return topSellingBooks.map(item => {
-      const author = findAutherById(
-        item.relationships?.author?.data?.id ?? '',
-        authorsList,
-      );
-      return (
-        <View style={bookStoreItemStyle.bookItemContainer} key={item.id}>
-          <Text style={bookStoreItemStyle.bookText}>
-            {item.attributes.name ?? ''}
-          </Text>
-          <View style={bookStoreItemStyle.bookAuthorContainer}>
+    if (topSellingBooks.length > 0) {
+      return topSellingBooks.map(item => {
+        const author = findAutherById(
+          item.relationships?.author?.data?.id ?? '',
+          authorsList,
+        );
+        return (
+          <View style={bookStoreItemStyle.bookItemContainer} key={item.id}>
             <Text style={bookStoreItemStyle.bookText}>
-              {author?.attributes.fullName ?? ''}
+              {item.attributes.name ?? ''}
             </Text>
+            <View style={bookStoreItemStyle.bookAuthorContainer}>
+              <Text style={bookStoreItemStyle.bookText}>
+                {author?.attributes.fullName ?? ''}
+              </Text>
+            </View>
+          </View>
+        );
+      });
+    } else {
+      return (
+        <View style={bookStoreItemStyle.bookItemContainer}>
+          <Text style={bookStoreItemStyle.bookText}>No data available</Text>
+          <View style={bookStoreItemStyle.bookAuthorContainer}>
+            <Text style={bookStoreItemStyle.bookText}>{''}</Text>
           </View>
         </View>
       );
-    });
+    }
   }
 
   function renderFooterView() {

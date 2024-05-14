@@ -6,7 +6,6 @@ const baseQuery = fetchBaseQuery({
   baseUrl: 'http://localhost:3000/',
   prepareHeaders: headers => {
     headers.set('accept', 'application/json');
-    headers.set('authorization', '');
     return headers;
   },
 });

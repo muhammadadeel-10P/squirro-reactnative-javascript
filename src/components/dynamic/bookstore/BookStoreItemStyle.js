@@ -106,4 +106,10 @@ export const bookStoreItemStyle = StyleSheet.create({
     height: 20,
     borderRadius: 10,
   },
+  noDataText: {
+    flex: 1,
+    fontSize: 14,
+    padding: 2,
+    textAlignVertical: 'center',
+  },
 });

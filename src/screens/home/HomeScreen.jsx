@@ -64,7 +64,9 @@ const HomeScreen = () => {
         }
         ListEmptyComponent={() => (
           <PlaceHolderTextView
-            message={'Error loading content.\nPlease try again by swiping down'}
+            message={
+              'Error connecting to the server.\nPlease start Squirro Book store API and swipe down to reload.'
+            }
           />
         )}
       />

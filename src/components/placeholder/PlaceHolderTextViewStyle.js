@@ -8,7 +8,7 @@ export const placeHolderViewStyle = StyleSheet.create({
     maxHeight: 200,
     alignSelf: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 25,
+    paddingHorizontal: 30,
     marginTop: Dimensions.get('screen').height / 2.5,
   },
   message: {

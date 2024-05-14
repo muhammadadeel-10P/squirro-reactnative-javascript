@@ -5,8 +5,11 @@ export const countryEndPoint = api.injectEndpoints({
     countryData: build.query({
       query: params => {
         return {
-          url: `https://restcountries.com/v3.1/alpha/${params.code}`,
-          method: 'GET',
+          url: `${process.env.API_COUNTRIES}${'flag/unicode'}`,
+          method: 'POST',
+          body: {
+            iso2: params.code,
+          },
         };
       },
     }),

@@ -15,7 +15,12 @@ module.exports = {
         },
       },
     ],
-    'inline-dotenv',
-    'react-native-reanimated/plugin', // needs to be last
+    'react-native-reanimated/plugin',
+    [
+      'babel-plugin-inline-dotenv',
+      {
+        path: '.env',
+      },
+    ],
   ],
 };

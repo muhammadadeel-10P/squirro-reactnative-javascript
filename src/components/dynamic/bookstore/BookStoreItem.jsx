@@ -7,9 +7,12 @@ import {useCountryDataQuery} from '@/services/modules/flags';
 import {formatDateFromString} from '@/utils/DateUtils';
 
 const BookStoreItem = ({store, topSellingBooks, authorsList, country}) => {
-  const {data: countryData} = useCountryDataQuery({
-    code: country?.code ?? '',
-  });
+  const {data: countryData} = useCountryDataQuery(
+    {
+      code: country?.code ?? '',
+    },
+    {refetchOnFocus: true},
+  );
 
   function renderBestSellingItem() {
     if (topSellingBooks.length > 0) {
@@ -51,12 +54,10 @@ const BookStoreItem = ({store, topSellingBooks, authorsList, country}) => {
             ` - ${store.attributes.website.replace('https://', '')}`}
         </Text>
         <View style={bookStoreItemStyle.flagContainer}>
-          <Image
-            style={bookStoreItemStyle.flag}
-            source={{
-              uri: countryData?.flags?.png,
-            }}
-          />
+          {/* Since api returns svg icon url or unicode. So displaying flag in text using unicode*/}
+          <Text style={bookStoreItemStyle.flagUnicode}>
+            {countryData?.data?.unicodeFlag}
+          </Text>
         </View>
       </View>
     );

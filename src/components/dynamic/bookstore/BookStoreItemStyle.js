@@ -95,8 +95,6 @@ export const bookStoreItemStyle = StyleSheet.create({
   flagContainer: {
     width: 20,
     height: 20,
-    borderRadius: 10,
-    backgroundColor: Colors.gray,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -105,6 +103,11 @@ export const bookStoreItemStyle = StyleSheet.create({
     width: 20,
     height: 20,
     borderRadius: 10,
+  },
+  flagUnicode: {
+    fontSize: 20,
+    width: 25,
+    height: 25,
   },
   noDataText: {
     flex: 1,

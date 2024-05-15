@@ -22,9 +22,9 @@ In the root of your project, create a .env file and add the following variables 
 
 ```bash
 # To fetch book store data
-API_URL="http://localhost:3000"
+API_URL="http://localhost:3000/"
 
-if you find connectivity issue please add your ip address instead of "localhost. For an example,  http://192.168.0.0:3000/
+if you find connectivity issue please add your ip address instead of "localhost". For an example,  http://192.168.0.0:3000/
 
 # To fetch country data from ISO2
 API_COUNTRIES="https://countriesnow.space/api/v0.1/countries/"

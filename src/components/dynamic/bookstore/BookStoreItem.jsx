@@ -69,7 +69,10 @@ const BookStoreItem = ({store, topSellingBooks, authorsList, country}) => {
         <View style={bookStoreItemStyle.logoContainer}>
           <Image
             style={bookStoreItemStyle.logo}
-            source={{uri: store.attributes.storeImage}}
+            source={{uri: store.attributes.storeImage, cache: 'reload'}}
+            onError={error =>
+              console.error('Image loading error:', error.nativeEvent.error)
+            }
           />
         </View>
         <View style={bookStoreItemStyle.content}>
